@@ -39,3 +39,23 @@ Today's output: `research/market-2026.md`. No code today. These are the concepts
 
 ### 4. Reading postings: "required" vs "preferred"
 Google's Summer 2027 SWE intern posting *requires* DSA and software design and only *prefers* ML. So DSA practice runs in parallel with the portfolio. The projects make you stand out, but DSA gets you through the screen.
+
+---
+
+## 2026-10-12 — Day 2: choosing projects like an engineer
+
+### 1. Scoring ideas against a rubric (and why PaperTrail still comes first)
+**What:** I scored 17 project ideas on 10 criteria (hiring signal, depth, measurability, etc.) in `research/project-ranking.md`. **Why:** picking projects by gut feeling leads to a portfolio of whatever was fun. A rubric makes the tradeoffs visible and lets you explain them. **Concept:** scores are *judgments*, not data — I say so in the file. Raw rank ≠ build order: PaperTrail is built first because of timing (it's already on your resume) and signal strength (RAG + evals), not just the sum.
+**Interview Qs**
+- *Q: How did you decide what to build?* A: I read real postings, listed repeating skills, scored candidate projects on hiring signal and measurability, and sequenced by when internship applications open.
+- *Q: Why one deep project instead of ten small ones?* A: Depth lets you show measurement and tradeoffs, which is what interviewers probe; ten tutorials show only that you can follow instructions.
+
+### 2. Offline vs online evaluation (preview for the recsys project)
+**What:** Offline = metrics on historical data (nDCG, Recall@K). Online = real users in an A/B test. **Why it matters:** a model that wins offline can lose online (position bias, feedback loops), so big-tech MLE interviews ask about the gap. Interleaving mixes two rankers' results in one list and checks which one users click, needing far less traffic than a classic A/B test.
+**Interview Qs**
+- *Q: Why use a time-based split for recommendations?* A: Random splits leak future behaviour into training and overstate quality.
+- *Q: Why can offline metrics mislead?* A: Logged data only shows what the old system chose to display, so it is biased toward items it already showed.
+
+### 3. Why KV cache is on the roadmap (preview)
+When a transformer generates token n+1 it needs the keys and values of all earlier tokens. Without a cache you recompute them every step (quadratic work overall); with a cache you store them and compute only the new token's — trading memory for speed. That tradeoff (and quantization to shrink it) is the core of the LLM inference lab.
+- *Q: Is decoding compute-bound or memory-bound?* A: Mostly memory-bound at small batch sizes: each step moves the weights and the cache through memory for little arithmetic, which is why batching helps throughput.

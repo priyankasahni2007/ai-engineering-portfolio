@@ -14,18 +14,16 @@ It is already listed on her resume as "in progress", so it must be built FIRST a
 - When results exist, write real-number resume bullets in PORTFOLIO_ROADMAP.md and flag them to Priyanka (she will update her resume).
 
 ## Done
-- 2026-10-11 — Phase A(a): market research → `research/market-2026.md` (implications in §5).
+- 2026-10-11 — Phase A(a): market research → `research/market-2026.md`.
+- 2026-10-12 — Phase A(b)+(c): `research/project-ranking.md` (17 ideas ranked) and `PORTFOLIO_ROADMAP.md` (7 flagships, Oct 2026 – Sep 2027, gaps). Phase A is complete.
 
-## Next run (Day 2)
-- Phase A(b)+(c) in one run: rank 15+ project ideas → `research/project-ranking.md`. Then pick 5–7 flagships (PaperTrail is #1, fixed), write the 6–12 month roadmap, and create `PORTFOLIO_ROADMAP.md`.
-- Use `research/market-2026.md` §5 as input:
-  - The agent project reuses PaperTrail as a tool.
-  - Include one ranking/recsys classic-ML project with A/B or interleaving analysis.
-  - Include one LLM-internals project measuring quantization × KV cache × batching on CPU.
-  - Add a parallel DSA prep track (not a project).
-- Keep the roadmap front-loaded: PaperTrail v1 (retrieval + eval + README with real numbers) should land before the end of November 2026.
-- Day 3 onward: build PaperTrail, starting with the skeleton (pyproject, src layout, tests, Makefile, CI) and arXiv ingestion.
+## Next run (Day 3) — start Phase B: PaperTrail M1
+- Create `projects/papertrail/` skeleton: `pyproject.toml`, `src/papertrail/` layout, `tests/`, `Makefile`, `.env.example`, `.gitignore`, GitHub Actions CI at `.github/workflows/ci.yml` (lint with ruff + pytest), `docs/adr/0001-*.md` (project layout + tools).
+- Arxiv ingestion: check what is reachable from the sandbox (arXiv API / Kaggle metadata / HF datasets). Pull a small subset (~2k abstracts, cs.CL/cs.LG) into a Parquet file with a documented schema; write tests on the parser. If no network access to data, say so and use a tiny fixture dataset, marking real data as TODO.
+- LEARNING_LOG: explain src layout, CI, and why reproducible data ingestion matters.
+- Keep each run to one component (M1 then M2 BM25 baseline + eval harness, etc. — see roadmap §1).
 
 ## Needs Priyanka
-- Optional, ~10 min: skim `research/market-2026.md` §1 and §5. If you disagree with the lane priorities (Applied AI first, classic MLE second), say so in this file before Day 2 runs.
-- Heads-up for later (not needed yet): the faithfulness eval and the answer generation will eventually need an LLM. We'll start with a free local model on CPU. An API key (e.g. Anthropic) is optional and will be flagged when it becomes useful.
+- Optional, ~10 min: skim `PORTFOLIO_ROADMAP.md` (status board + gaps) and `research/project-ranking.md`. If you want a different order of projects 2–7 or want to swap CV for another flagship, edit this file before Day 3.
+- Start the parallel DSA track yourself (a few problems per week); this can't be built for you.
+- Later (not yet): an LLM API key will help the agent project (project 2). Not needed for PaperTrail M1–M4.

@@ -1,0 +1,25 @@
+name: papertrail-ci
+on:
+  push:
+    paths: ["projects/papertrail/**", ".github/workflows/ci.yml"]
+  pull_request:
+    paths: ["projects/papertrail/**", ".github/workflows/ci.yml"]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: projects/papertrail
+    strategy:
+      matrix:
+        python: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: projects/papertrail/pyproject.toml
+      - run: make install
+      - run: make lint
+      - run: make test

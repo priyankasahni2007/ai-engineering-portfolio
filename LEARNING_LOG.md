@@ -59,3 +59,23 @@ Google's Summer 2027 SWE intern posting *requires* DSA and software design and o
 ### 3. Why KV cache is on the roadmap (preview)
 When a transformer generates token n+1 it needs the keys and values of all earlier tokens. Without a cache you recompute them every step (quadratic work overall); with a cache you store them and compute only the new token's — trading memory for speed. That tradeoff (and quantization to shrink it) is the core of the LLM inference lab.
 - *Q: Is decoding compute-bound or memory-bound?* A: Mostly memory-bound at small batch sizes: each step moves the weights and the cache through memory for little arithmetic, which is why batching helps throughput.
+
+---
+
+## 2026-10-13 — Day 3: PaperTrail M1 (skeleton, CI, ingestion)
+
+### 1. Pure parsing vs. network code (testable ingestion)
+**What:** `arxiv.parse_feed` turns Atom XML text into `Paper` records; `arxiv.fetch` only downloads and pages. **Why:** network calls are slow and flaky, so the logic that can be wrong (cleaning text, ids, duplicates) is a pure function tested on a saved fixture. In this sandbox arXiv is blocked, and the tests still prove the parser works. **Concept:** separate I/O from logic. Details that matter: arXiv hard-wraps text (collapse whitespace), ids carry versions (`2401.01234v2` → `2401.01234`, or two versions of one paper become two documents), paging can overlap (dedupe), and error responses come back as fake "entries" (skip them).
+**Interview Qs**
+- *Q: Why strip the version from the id?* A: The version is not a different paper; keeping it duplicates documents and would later let the same paper count twice as a "relevant" hit in evaluation.
+- *Q: How would you test code that calls an external API?* A: Isolate parsing in a pure function, test it on recorded fixtures; mock or skip the thin network layer; add a small manual/integration check.
+
+### 2. Why Parquet with an explicit schema
+**What:** a columnar, compressed, typed file format. **Why:** later stages (BM25, embeddings) reload thousands of records often; Parquet is smaller and faster than JSON and keeps list columns (authors, categories). An explicit schema means an empty batch still has the right column types (there is a test for exactly that).
+- *Q: Parquet vs CSV?* A: Typed, nested columns, compression, and column pruning; CSV loses types and can't hold lists cleanly.
+
+### 3. `src/` layout and CI
+**What:** code in `src/papertrail/`, installed with `pip install -e .`; GitHub Actions runs the same `make lint test` on Python 3.10 and 3.12. **Why:** with a flat layout, tests can import code straight from the working folder and hide packaging bugs. CI is your promise that the main branch always works; matching local and CI commands avoids "works on my machine". (Small gotcha I hit: the `pytest` command was in a different Python environment, so `python -m pytest` is the safer form — it uses the interpreter you actually installed into.)
+- *Q: What does CI give a solo project?* A: A reproducible clean-environment check on every push, which also tells reviewers the repo is trustworthy.
+
+**Honest status:** no retrieval or results yet — this milestone is plumbing. Real arXiv download is still TODO because this sandbox can't reach arxiv.org.

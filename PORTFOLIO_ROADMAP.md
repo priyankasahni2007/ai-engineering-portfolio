@@ -8,7 +8,7 @@ _Last updated: 2026-10-12 (Day 2). Target: Applied AI / AI Engineer / ML Enginee
 
 | # | Project | Slug | Status | Target window |
 |---|---|---|---|---|
-| 1 | PaperTrail — evaluated hybrid RAG over arXiv (**locked**) | `papertrail` | Not started (starts Day 3) | 13 Oct – 30 Nov 2026 (v1 by end Nov) |
+| 1 | PaperTrail — evaluated hybrid RAG over arXiv (**locked**) | `papertrail` | In progress — M1 done (skeleton, CI, ingestion code); real data fetch pending network | 13 Oct – 30 Nov 2026 (v1 by end Nov) |
 | 2 | Research agent on top of PaperTrail | `papertrail-agent` | Planned | Dec 2026 – mid Jan 2027 (winter break) |
 | 3 | LLM inference lab (tiny transformer, KV cache, quantization, batching) | `llm-inference-lab` | Planned | mid Jan – Feb 2027 |
 | 4 | Two-stage recsys / ranking with A/B-style analysis | `rec-ranking` | Planned | Mar – Apr 2027 |
@@ -33,7 +33,7 @@ Why this order: internship applications for Summer 2027 open roughly Oct 2026 �
 ---
 
 ## 1. PaperTrail — Evaluated Retrieval-Augmented Research Assistant (LOCKED)
-- **Status:** Not started.
+- **Status:** In progress. M1 done 2026-10-13: src layout, ruff+pytest (11 tests passing), CI workflow, arXiv Atom parser + Parquet IO, ADR 0001. Real arXiv data NOT yet fetched (sandbox blocks arxiv.org / huggingface.co); no retrieval results yet.
 - **Objective:** QA over 10,000+ arXiv ML papers (start with a subset of abstracts) where every answer cites source passages, and every retrieval/generation choice is justified by a measured comparison.
 - **Skills demonstrated:** information retrieval, evaluation design, backend service engineering, cost/latency awareness.
 - **Tech stack (why):** Python (baseline, 71% of postings) · `rank_bm25`/own BM25 (exact-term matching: "LoRA", "KV-cache") · sentence-transformers embeddings + **FAISS** (dense recall on paraphrases; fast CPU ANN) · RRF fusion (no score calibration) · cross-encoder reranker via Hugging Face Transformers/PyTorch (precision at top-k) · query rewriting (fix vague queries; measured, may not help) · small local LLM for generation (free, CPU; API optional later) · **FastAPI** (service) · **Docker** (reproducible) · **pytest + GitHub Actions** (keep green) · arXiv metadata dump / API (free, open).

@@ -16,14 +16,15 @@ It is already listed on her resume as "in progress", so it must be built FIRST a
 ## Done
 - 2026-10-11 — Phase A(a): market research → `research/market-2026.md`.
 - 2026-10-12 — Phase A(b)+(c): `research/project-ranking.md` (17 ideas ranked) and `PORTFOLIO_ROADMAP.md` (7 flagships, Oct 2026 – Sep 2027, gaps). Phase A is complete.
+- 2026-10-13 — PaperTrail M1: `projects/papertrail/` skeleton, ruff+pytest (11 tests pass), CI workflow, arXiv Atom parser + Parquet IO, ADR 0001. Real data NOT fetched: sandbox blocks arxiv.org and huggingface.co (pypi works).
 
-## Next run (Day 3) — start Phase B: PaperTrail M1
-- Create `projects/papertrail/` skeleton: `pyproject.toml`, `src/papertrail/` layout, `tests/`, `Makefile`, `.env.example`, `.gitignore`, GitHub Actions CI at `.github/workflows/ci.yml` (lint with ruff + pytest), `docs/adr/0001-*.md` (project layout + tools).
-- Arxiv ingestion: check what is reachable from the sandbox (arXiv API / Kaggle metadata / HF datasets). Pull a small subset (~2k abstracts, cs.CL/cs.LG) into a Parquet file with a documented schema; write tests on the parser. If no network access to data, say so and use a tiny fixture dataset, marking real data as TODO.
-- LEARNING_LOG: explain src layout, CI, and why reproducible data ingestion matters.
-- Keep each run to one component (M1 then M2 BM25 baseline + eval harness, etc. — see roadmap §1).
+## Next run (Day 4) — PaperTrail M2: BM25 baseline + eval harness
+- First re-test network: `curl https://export.arxiv.org/...` and HF datasets. If reachable, fetch ~2k cs.CL/cs.LG abstracts via `papertrail.cli` and record the count.
+- If still blocked: build a small *realistic* corpus another way (e.g. PyPI-installable datasets, if any contain arXiv-style abstracts) or keep the fixture and mark all numbers TODO. Do not invent results.
+- Implement own BM25 (tokenizer, inverted index, scoring) in `src/papertrail/retrieval/bm25.py` with unit tests; implement metrics Recall@K, MRR, nDCG@K (`eval/metrics.py`) with hand-computed test cases; define the golden-set format (query → relevant arxiv_ids) in an ADR.
+- LEARNING_LOG: BM25 formula intuition, why metrics differ (Recall vs MRR vs nDCG).
 
 ## Needs Priyanka
-- Optional, ~10 min: skim `PORTFOLIO_ROADMAP.md` (status board + gaps) and `research/project-ranking.md`. If you want a different order of projects 2–7 or want to swap CV for another flagship, edit this file before Day 3.
-- Start the parallel DSA track yourself (a few problems per week); this can't be built for you.
-- Later (not yet): an LLM API key will help the agent project (project 2). Not needed for PaperTrail M1–M4.
+- **Decision (blocking real results):** the build sandbox can't reach arxiv.org/huggingface.co. Easiest fix: in your Claude environment settings, allow network access to `export.arxiv.org` and `huggingface.co` (or full access). Otherwise run `make install && python -m papertrail.cli --category cs.CL --n 2000` on your own laptop and commit `data/` metadata is gitignored — tell me and we'll pick another route.
+- Start the parallel DSA track yourself (a few problems per week).
+- Later: an LLM API key helps the agent project (not needed for M2–M4).

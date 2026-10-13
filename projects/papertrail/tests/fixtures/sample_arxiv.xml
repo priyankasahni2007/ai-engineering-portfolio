@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SYNTHETIC FIXTURE: invented entries in arXiv Atom format, for offline tests only. -->
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:arxiv="http://arxiv.org/schemas/atom">
+  <entry>
+    <id>http://arxiv.org/abs/0000.00001v2</id>
+    <updated>2024-02-01T10:00:00Z</updated>
+    <published>2024-01-15T09:30:00Z</published>
+    <title>A Fictional Study of
+  Sparse Retrieval</title>
+    <summary>  We study term-weighting for
+  retrieval and report that BM25 remains a strong baseline.
+    </summary>
+    <author><name>Ada Example</name></author>
+    <author><name>Bo Sample</name></author>
+    <category term="cs.LG"/>
+    <category term="cs.CL"/>
+    <arxiv:primary_category term="cs.CL"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/cs/0000001v1</id>
+    <updated>2023-05-05T00:00:00Z</updated>
+    <published>2023-05-05T00:00:00Z</published>
+    <title>Old-Style Identifier Paper</title>
+    <summary>Checks that legacy ids with a slash are preserved.</summary>
+    <author><name>Cy Test</name></author>
+    <category term="cs.IR"/>
+    <arxiv:primary_category term="cs.IR"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/0000.00001v1</id>
+    <updated>2024-01-15T09:30:00Z</updated>
+    <published>2024-01-15T09:30:00Z</published>
+    <title>A Fictional Study of Sparse Retrieval (duplicate of v1)</title>
+    <summary>Same paper again, as can happen when paging overlaps.</summary>
+    <author><name>Ada Example</name></author>
+    <category term="cs.CL"/>
+    <arxiv:primary_category term="cs.CL"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/api/errors#incorrect_id_format</id>
+    <title>Error</title>
+    <summary>incorrect id format</summary>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/0000.00003v1</id>
+    <title>Paper With Empty Abstract</title>
+    <summary>   </summary>
+  </entry>
+</feed>

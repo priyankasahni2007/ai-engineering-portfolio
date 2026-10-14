@@ -79,3 +79,25 @@ When a transformer generates token n+1 it needs the keys and values of all earli
 - *Q: What does CI give a solo project?* A: A reproducible clean-environment check on every push, which also tells reviewers the repo is trustworthy.
 
 **Honest status:** no retrieval or results yet — this milestone is plumbing. Real arXiv download is still TODO because this sandbox can't reach arxiv.org.
+
+
+---
+
+## 2026-10-14 — Day 4: PaperTrail M2 (BM25 + evaluation metrics)
+
+### 1. BM25 (`retrieval/bm25.py`)
+**What:** a keyword ranking function. For each query word it adds `idf * saturated_tf`, summed over words. **Why:** exact-term matching ("LoRA", "KV-cache") is something dense embeddings blur, so BM25 is the baseline everything else must beat. **Concept:** three ideas. (1) *IDF*: rare words carry more information than common ones. (2) *TF saturation* (`k1`): the 10th occurrence of a word adds much less than the 1st. (3) *Length normalisation* (`b`): a long document mentions words more by chance, so it is penalised. A test checks a hand-computed score, and another checks that a short document beats a long one with the same matches.
+**Interview Qs**
+- *Q: What do k1 and b control?* A: k1 sets how fast term frequency saturates; b sets how strongly document length is penalised (0 = none, 1 = full).
+- *Q: Why does BM25 beat TF-IDF?* A: TF-IDF grows linearly with term count and ignores length; BM25 saturates and normalises.
+- *Q: When does BM25 fail?* A: Vocabulary mismatch: "car" vs "automobile". That is the case for dense/hybrid retrieval.
+- *Q: Why an inverted index?* A: Only documents that contain a query term are touched, not the whole corpus.
+
+### 2. Recall@K vs MRR vs nDCG (`eval/metrics.py`)
+**What:** three ways to score a ranked list against known-relevant docs. **Recall@K:** what share of the relevant docs is in the top K (good for "did the reranker/LLM get a chance to see it?"). **MRR:** 1/rank of the first relevant hit (good when one answer is enough). **nDCG@K:** rewards relevant docs more the higher they sit, via a `1/log2(rank+1)` discount, divided by the best possible score so it lies in 0..1. **Why it matters:** a retriever can have high Recall@10 but poor MRR, meaning the answer is found but buried; that is exactly what a reranker fixes.
+**Interview Qs**
+- *Q: Recall@10 is high but answers are bad. Why?* A: Relevant passage is retrieved but ranked low or the generator ignores it; check MRR/nDCG, reranking, and faithfulness.
+- *Q: Why normalise DCG?* A: So queries with different numbers of relevant docs are comparable and can be averaged.
+- *Q: Risk of synthetic golden sets?* A: Queries generated from an abstract share its words, so BM25 looks unrealistically good; report them separately from human-labelled ones (ADR 0002).
+
+**Honest status:** no retrieval results yet. arxiv.org and huggingface.co are still blocked from the sandbox, so there is no real corpus. Everything built today is verified by unit tests only; no performance number is claimed.

@@ -7,9 +7,11 @@ name = "papertrail"
 version = "0.1.0"
 description = "Evaluated hybrid retrieval-augmented research assistant over arXiv ML papers"
 requires-python = ">=3.10"
-dependencies = ["pyarrow>=14"]
+dependencies = ["pyarrow>=14", "numpy>=1.26", "faiss-cpu>=1.8"]
+
 
 [project.optional-dependencies]
+embed = ["sentence-transformers>=3"]
 dev = ["pytest>=8", "ruff>=0.5"]
 
 [project.scripts]

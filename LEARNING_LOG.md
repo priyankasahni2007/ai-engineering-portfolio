@@ -101,3 +101,27 @@ When a transformer generates token n+1 it needs the keys and values of all earli
 - *Q: Risk of synthetic golden sets?* A: Queries generated from an abstract share its words, so BM25 looks unrealistically good; report them separately from human-labelled ones (ADR 0002).
 
 **Honest status:** no retrieval results yet. arxiv.org and huggingface.co are still blocked from the sandbox, so there is no real corpus. Everything built today is verified by unit tests only; no performance number is claimed.
+
+
+---
+
+## 2026-10-15 — Day 5: PaperTrail M3 (dense retrieval + hybrid fusion)
+
+### 1. Dense retrieval and cosine similarity (`retrieval/dense.py`)
+**What:** an embedding model turns each abstract into a vector (e.g. 384 numbers); a query is embedded the same way and we return the nearest vectors. **Why:** BM25 only matches words, so "reducing memory of attention" misses a paper saying "KV-cache compression". Embeddings place similar meanings close together. **Concept:** we L2-normalise every vector, so the inner product equals cosine similarity (angle between vectors, ignoring length), and FAISS `IndexFlatIP` computes it exactly by brute force. At ~10k documents that is milliseconds; approximate indexes (HNSW/IVF) are only worth their recall loss at millions of vectors.
+**Interview Qs**
+- *Q: Why normalise embeddings?* A: Then inner product = cosine, so a fast inner-product index gives cosine ranking and long/short texts are comparable.
+- *Q: Flat vs HNSW?* A: Flat is exact but O(N) per query; HNSW is a graph index with sub-linear search but approximate and with memory/build cost. Choose by corpus size and recall target.
+- *Q: Where does dense retrieval fail?* A: Rare exact terms, names, numbers, acronyms it never saw in training; that is why we keep BM25.
+
+### 2. Reciprocal Rank Fusion (`retrieval/hybrid.py`)
+**What:** merge BM25's and dense's ranked lists with `score(d) = sum 1/(60 + rank)`. **Why:** BM25 scores (e.g. 14.2) and cosines (e.g. 0.71) are on different scales, so adding them is meaningless without tuning. RRF uses only ranks: a doc ranked high by both wins, and one list's outlier score cannot dominate. The constant 60 damps the gap between rank 1 and rank 2. A test checks the formula by hand.
+**Interview Qs**
+- *Q: Why RRF rather than a weighted score sum?* A: No score calibration or tuning needed and robust; weighted sums can be better when tuned on labelled data, so we expose weights and will test it.
+- *Q: What does c do?* A: Larger c flattens the rank contribution so lower ranks matter more.
+
+### 3. Designing for a blocked network: the Embedder interface
+`DenseIndex` accepts anything with `encode()`. Tests use a deterministic hashing embedder (word overlap only — explicitly *not* semantic), real runs use sentence-transformers. Concept: dependency inversion; also an honesty guard — numbers from the fake embedder must never be presented as dense-retrieval results.
+- *Q: Why not mock the model in tests?* A: A small real fake exercising the real FAISS path catches shape/normalisation bugs that a mock would hide.
+
+**Honest status:** mechanics are tested (34 tests pass); no retrieval quality numbers exist yet because arxiv.org and huggingface.co are still unreachable from the sandbox.

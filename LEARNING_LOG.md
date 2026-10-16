@@ -125,3 +125,27 @@ When a transformer generates token n+1 it needs the keys and values of all earli
 - *Q: Why not mock the model in tests?* A: A small real fake exercising the real FAISS path catches shape/normalisation bugs that a mock would hide.
 
 **Honest status:** mechanics are tested (34 tests pass); no retrieval quality numbers exist yet because arxiv.org and huggingface.co are still unreachable from the sandbox.
+
+---
+
+## 2026-10-16 — PaperTrail M4: reranking, query rewriting, eval runner
+
+### 1. Reranking with a cross-encoder (`retrieval/rerank.py`)
+**What:** take the top-N results of a fast first stage and re-score each (query, document) pair with a slower, more accurate model. **Why:** a bi-encoder embeds the query and document *separately* and compares vectors, so it can't model fine interactions between specific query and document words. A cross-encoder feeds both into one transformer, which is more accurate but needs one forward pass per candidate, so you can't run it on 10,000 papers; you run it on the ~50 the cheap stage returned. **Concept:** "retrieve then rerank" — a recall-oriented first stage, a precision-oriented second stage. Raising N helps recall of the reranker input but increases latency linearly.
+**Interview Qs**
+- *Q: Bi-encoder vs cross-encoder?* A: Bi-encoder encodes texts independently (documents can be pre-indexed, fast); cross-encoder encodes the pair jointly (accurate, no pre-computation, slow).
+- *Q: Why not rerank everything?* A: Cost scales with corpus size × model cost; reranking top-N bounds latency.
+- *Q: Reranker can't fix which failure?* A: A relevant document missing from the top-N — so measure first-stage Recall@N.
+- *Q: How would you pick N?* A: Sweep N, plot nDCG vs p95 latency, pick the knee.
+
+### 2. Query rewriting (`retrieval/rewrite.py`)
+**What:** transform the query before search; here, expanding abbreviations ("LoRA" -> "low-rank adaptation"). **Why:** BM25 only matches literal tokens, so a query "lora" finds nothing in a paper that only says "low-rank adaptation" (a test proves it). **Trade-off:** expansion raises recall but can add noise; an LLM rewriter is more flexible but adds cost, latency and nondeterminism. So it must be evaluated as an ablation, not assumed to help.
+**Interview Qs**
+- *Q: When can query expansion hurt?* A: Ambiguous terms drag in off-topic documents, lowering precision.
+- *Q: Why wrap a retriever instead of editing it?* A: Composability and clean ablations (same interface, swap or remove stages).
+
+### 3. Eval runner with latency percentiles (`eval/runner.py`)
+**What:** runs each configuration over the golden set and reports Recall@K/MRR/nDCG plus p50/p95 latency. **Why p95:** the mean hides slow outliers; users feel the tail. Quality without latency/cost is an incomplete engineering story.
+**Interview Q:** *Q: Why report p95 rather than average latency?* A: A few slow queries dominate user-perceived quality and SLAs; averages hide them.
+
+**Honest status:** 40 tests pass, ruff clean. arxiv.org / huggingface.co are still unreachable from the sandbox (re-tested today), so there is still no real corpus, no real model, and **no retrieval numbers**. OverlapReranker / HashingEmbedder are test stand-ins, not semantic.

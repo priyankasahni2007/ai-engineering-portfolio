@@ -20,12 +20,13 @@ It is already listed on her resume as "in progress", so it must be built FIRST a
 - 2026-10-14 — PaperTrail M2: own BM25 + metrics (Recall@K, MRR, nDCG@K) + golden-set loader, 26 tests pass, ADR 0002. Network to arxiv.org/huggingface.co still blocked; no corpus, no results.
 - 2026-10-15 — PaperTrail M3: `retrieval/dense.py` (Embedder interface, FAISS flat IP index, sentence-transformers wrapper, offline hashing embedder), `retrieval/hybrid.py` (RRF + HybridRetriever), ADR 0003, 34 tests pass. Still no network to arxiv.org/huggingface.co → no corpus, no real results.
 
-## Next run (Day 6) — PaperTrail M4: reranker + query rewriting (code) and an eval runner
-- Re-test network first (curl export.arxiv.org + huggingface.co). If open: fetch ~2k abstracts, build synthetic golden set, run BM25 / dense (bge-small) / hybrid through `eval.evaluate`, record REAL numbers in the README results table.
-- Write `eval/runner.py` that runs any searcher over a golden set and reports Recall@K/MRR/nDCG@K + latency p50/p95 per config (testable now with HashingEmbedder on the tiny fixture; label such runs as non-semantic).
-- Implement `retrieval/rerank.py` behind a `Reranker` interface (cross-encoder wrapper + fake for tests) and `retrieval/rewrite.py` (rule-based expansion first; LLM rewrite optional).
-- LEARNING_LOG: bi-encoder vs cross-encoder, why rerank only top-N, query rewriting trade-offs.
-- Do not stall if the network is still blocked.
+- 2026-10-16 — PaperTrail M4: reranker wrapper + cross-encoder, query rewriting, eval runner with latency p50/p95, ADR 0004, 40 tests pass. Network still blocked (re-tested).
+
+## Next run (Day 7) — PaperTrail M5: generation + citations + faithfulness (code)
+- Re-test network first (curl export.arxiv.org + huggingface.co). If open: fetch ~2k abstracts, synthetic golden set, run BM25 / dense bge-small / hybrid / +rerank / +rewrite through `eval.runner.compare`, put REAL numbers in the README results table.
+- Otherwise implement `generation/` : `Generator` interface (fake extractive generator for tests; Anthropic/HF LLM wrapper optional), prompt builder that numbers retrieved passages, citation parser/validator ([1] must refer to a retrieved passage), and a simple faithfulness metric (fraction of answer sentences supported by cited passages, lexical first; NLI/LLM-judge later). Tests + ADR 0005.
+- LEARNING_LOG: grounded generation, citation validation, faithfulness vs relevance.
+- Don't stall if network is blocked.
 
 ## Needs Priyanka
 - **Decision (blocking real results, raised again Day 4):** the build sandbox can't reach arxiv.org/huggingface.co. Easiest fix: in your Claude environment settings, allow network access to `export.arxiv.org` and `huggingface.co` (or full access). Otherwise run `make install && python -m papertrail.cli --category cs.CL --n 2000` on your own laptop and commit `data/` metadata is gitignored — tell me and we'll pick another route.

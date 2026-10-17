@@ -22,11 +22,13 @@ It is already listed on her resume as "in progress", so it must be built FIRST a
 
 - 2026-10-16 — PaperTrail M4: reranker wrapper + cross-encoder, query rewriting, eval runner with latency p50/p95, ADR 0004, 40 tests pass. Network still blocked (re-tested).
 
-## Next run (Day 7) — PaperTrail M5: generation + citations + faithfulness (code)
-- Re-test network first (curl export.arxiv.org + huggingface.co). If open: fetch ~2k abstracts, synthetic golden set, run BM25 / dense bge-small / hybrid / +rerank / +rewrite through `eval.runner.compare`, put REAL numbers in the README results table.
-- Otherwise implement `generation/` : `Generator` interface (fake extractive generator for tests; Anthropic/HF LLM wrapper optional), prompt builder that numbers retrieved passages, citation parser/validator ([1] must refer to a retrieved passage), and a simple faithfulness metric (fraction of answer sentences supported by cited passages, lexical first; NLI/LLM-judge later). Tests + ADR 0005.
-- LEARNING_LOG: grounded generation, citation validation, faithfulness vs relevance.
-- Don't stall if network is blocked.
+- 2026-10-17 — PaperTrail M5: `generation/` (prompt, citation validation, lexical faithfulness, extractive generator, `answer_question`), ADR 0005, 49 tests pass. Network still blocked (curl to export.arxiv.org, huggingface.co, semanticscholar all fail).
+
+## Next run (Day 8) — PaperTrail M6: FastAPI + Docker
+- Re-test network first. If open: fetch ~2k abstracts, synthetic golden set, run all configs via `eval.runner.compare`, put REAL numbers in README results table.
+- Otherwise: `api/` FastAPI app (`/health`, `/search`, `/answer` using BM25+hybrid with offline fakes selectable by env var, pydantic response models with citations + per-stage latency), TestClient tests, Dockerfile + docker-compose, CI step, ADR 0006. Cost/query field in response (tokens x configurable price; 0 for local).
+- LEARNING_LOG: API design for ML services (startup-time index loading, pydantic schemas, health checks), Docker layering.
+- Then M7: README with architecture diagram + failure cases; fill results once data exists.
 
 ## Needs Priyanka
 - **Decision (blocking real results, raised again Day 4):** the build sandbox can't reach arxiv.org/huggingface.co. Easiest fix: in your Claude environment settings, allow network access to `export.arxiv.org` and `huggingface.co` (or full access). Otherwise run `make install && python -m papertrail.cli --category cs.CL --n 2000` on your own laptop and commit `data/` metadata is gitignored — tell me and we'll pick another route.

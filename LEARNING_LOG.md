@@ -149,3 +149,22 @@ When a transformer generates token n+1 it needs the keys and values of all earli
 **Interview Q:** *Q: Why report p95 rather than average latency?* A: A few slow queries dominate user-perceived quality and SLAs; averages hide them.
 
 **Honest status:** 40 tests pass, ruff clean. arxiv.org / huggingface.co are still unreachable from the sandbox (re-tested today), so there is still no real corpus, no real model, and **no retrieval numbers**. OverlapReranker / HashingEmbedder are test stand-ins, not semantic.
+
+
+---
+
+## 2026-10-17 — PaperTrail M5: grounded generation, citations, faithfulness
+
+### 1. Grounded generation with numbered passages (`generation/prompt.py`)
+**What:** retrieved passages are numbered `[1]..[k]` in the prompt and the model is told to answer only from them and cite `[n]` after each claim. **Why:** retrieval alone returns documents; a research assistant must answer, and users must be able to check the answer. Numbered citations give a machine-checkable link from claim to source. **Concept:** RAG = retrieve, then condition generation on the evidence; "abstain if not found" reduces made-up answers.
+
+### 2. Citation validity vs faithfulness (`generation/citations.py`)
+**What:** `validate_citations` checks every `[n]` refers to a passage that was actually retrieved and counts uncited sentences. `faithfulness` is the share of sentences whose content words are mostly (>=60%) found in the passages they cite. **Why two metrics:** a model can cite `[1]` correctly-formatted yet say something passage 1 never said. Tests show a *true* sentence with the *wrong* citation scores 0. **Honest limit:** word overlap rewards copying and misses paraphrase/negation ("X does not help" overlaps "X helps"). It's a cheap CI-safe proxy, to be replaced by NLI or an LLM judge calibrated on human labels.
+**Bug found by tests today:** my extractive generator wrote `sentence. [1]`; the splitter saw `[1]` as its own uncited sentence and faithfulness came out 0.5. Fix: cite before the full stop. Lesson: define output conventions once, in the prompt, parser and tests.
+**Interview Qs**
+- *Q: Recall@10 is high but answers are bad. Why?* A: Retrieval found the evidence but generation ignored or distorted it, the context was too long/noisy, or the passage needed was ranked low. Measure retrieval and faithfulness separately.
+- *Q: How do you evaluate faithfulness?* A: Split the answer into claims, check each against the cited evidence with NLI or an LLM judge; validate the judge on a small human-labelled set because judges have biases (verbosity, self-preference).
+- *Q: Why not just trust the model's citations?* A: Models invent citation numbers and attach real ones to unsupported claims; validate the index and check the support.
+- *Q: What's the weakness of token-overlap metrics?* A: They can't see meaning: paraphrases score low, contradictions with the same words score high.
+
+**Honest status:** 49 tests pass, ruff clean. Network (arxiv.org / huggingface.co / semanticscholar) still unreachable, so there is no real corpus and no real LLM; the extractive generator is a test stand-in. No results yet.

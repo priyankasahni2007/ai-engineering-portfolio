@@ -11,7 +11,7 @@ dependencies = ["pyarrow>=14", "numpy>=1.26", "faiss-cpu>=1.8"]
 
 
 [project.optional-dependencies]
-embed = ["sentence-transformers>=3"]
+embed = ["sentence-transformers>=3", "sentencepiece>=0.2"]  # sentencepiece: T5 query generator
 dev = ["pytest>=8", "ruff>=0.5"]
 
 [project.scripts]

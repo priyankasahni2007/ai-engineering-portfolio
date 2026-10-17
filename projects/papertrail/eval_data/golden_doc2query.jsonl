@@ -1,0 +1,200 @@
+{"qid": "q0", "query": "why is the recurrent memory dense", "relevant": ["2610.05700"]}
+{"qid": "q1", "query": "what is sea helm", "relevant": ["2610.19869"]}
+{"qid": "q2", "query": "unsafe compliance rate", "relevant": ["2610.21789"]}
+{"qid": "q3", "query": "benchmark score definition", "relevant": ["2610.03825"]}
+{"qid": "q4", "query": "tck-r model", "relevant": ["2610.16305"]}
+{"qid": "q5", "query": "what is duodiscover", "relevant": ["2610.17184"]}
+{"qid": "q6", "query": "what is machine aesthetic", "relevant": ["2610.17731"]}
+{"qid": "q7", "query": "what is forkgrepo", "relevant": ["2610.19408"]}
+{"qid": "q8", "query": "which language model is best for propaganda detection?", "relevant": ["2610.03077"]}
+{"qid": "q9", "query": "what is the role of context in large language model", "relevant": ["2610.20067"]}
+{"qid": "q10", "query": "what is abcagent?", "relevant": ["2610.04824"]}
+{"qid": "q11", "query": "which of the following domains has the greatest articulability gap?", "relevant": ["2610.03025"]}
+{"qid": "q12", "query": "what is vad in conversation", "relevant": ["2609.39072"]}
+{"qid": "q13", "query": "what is linguistic unalignability", "relevant": ["2610.08303"]}
+{"qid": "q14", "query": "why is rag used", "relevant": ["2610.20419"]}
+{"qid": "q15", "query": "which token cue is effective for reasoning?", "relevant": ["2610.06851"]}
+{"qid": "q16", "query": "what is ilm", "relevant": ["2610.12064"]}
+{"qid": "q17", "query": "what is the terminating procedure of a gate?", "relevant": ["2610.21646"]}
+{"qid": "q18", "query": "tokenization linguistics", "relevant": ["2610.21679"]}
+{"qid": "q19", "query": "what is the definition of csweval", "relevant": ["2610.20272"]}
+{"qid": "q20", "query": "what is the most precise time mfa", "relevant": ["2610.17782"]}
+{"qid": "q21", "query": "how to leverage inference", "relevant": ["2610.17560"]}
+{"qid": "q22", "query": "what is rankme?", "relevant": ["2610.09647"]}
+{"qid": "q23", "query": "what is flow-based latent reasoning", "relevant": ["2610.06666"]}
+{"qid": "q24", "query": "which system relies on factual, conceptual, procedural, and metacognitive knowledge to determine the reliability of claims extracted from an ongoing task stream?", "relevant": ["2610.21739"]}
+{"qid": "q25", "query": "what is bitcpm bf16", "relevant": ["2610.07853"]}
+{"qid": "q26", "query": "what is painting?", "relevant": ["2610.18269"]}
+{"qid": "q27", "query": "what is frugalevo", "relevant": ["2610.03675"]}
+{"qid": "q28", "query": "what is the difference between knowledge distillation and quantization", "relevant": ["2610.07032"]}
+{"qid": "q29", "query": "why social deduction is important for social learning", "relevant": ["2610.04261"]}
+{"qid": "q30", "query": "why does kl regularization sometimes improve group policy optimization?", "relevant": ["2610.12161"]}
+{"qid": "q31", "query": "why use remark", "relevant": ["2610.17771"]}
+{"qid": "q32", "query": "what is prompt optimization in a learning environment", "relevant": ["2610.11373"]}
+{"qid": "q33", "query": "git research pathways", "relevant": ["2610.07184"]}
+{"qid": "q34", "query": "what is self reported entity familiarity", "relevant": ["2610.16251"]}
+{"qid": "q35", "query": "what is the purpose of a block bypass in training?", "relevant": ["2610.01165"]}
+{"qid": "q36", "query": "what is transfer map", "relevant": ["2609.39702"]}
+{"qid": "q37", "query": "what is librarian agent framework", "relevant": ["2610.22273"]}
+{"qid": "q38", "query": "what is the evidence for the validity of a longitudinal llm", "relevant": ["2610.02684"]}
+{"qid": "q39", "query": "which typeface is used for japanese language", "relevant": ["2610.01241"]}
+{"qid": "q40", "query": "which model is robust?", "relevant": ["2610.19118"]}
+{"qid": "q41", "query": "what is job experience level in recruitment text", "relevant": ["2610.04304"]}
+{"qid": "q42", "query": "what is pace reasoning training", "relevant": ["2610.12061"]}
+{"qid": "q43", "query": "which type of control is associated with persistent memory", "relevant": ["2610.14431"]}
+{"qid": "q44", "query": "what is standard inference model", "relevant": ["2610.19165"]}
+{"qid": "q45", "query": "why use cosir training", "relevant": ["2610.17893"]}
+{"qid": "q46", "query": "why should you delete poisoned rows", "relevant": ["2609.37624"]}
+{"qid": "q47", "query": "average agreement of judges in an llm audit", "relevant": ["2610.02492"]}
+{"qid": "q48", "query": "what is aphavoice", "relevant": ["2610.14479"]}
+{"qid": "q49", "query": "why is a probe a useful probe in medical reasoning", "relevant": ["2610.20292"]}
+{"qid": "q50", "query": "terminal horizon", "relevant": ["2610.13166"]}
+{"qid": "q51", "query": "how does a model influence its score", "relevant": ["2610.20179"]}
+{"qid": "q52", "query": "which hypothesis is supported by empirical evidence that is more likely to be tested by fraud?", "relevant": ["2610.13678"]}
+{"qid": "q53", "query": "what is the difference between simplex and reinforce?", "relevant": ["2609.40235"]}
+{"qid": "q54", "query": "how parameter schemas affect tool selection", "relevant": ["2610.14334"]}
+{"qid": "q55", "query": "how is long horizon prediction recursively", "relevant": ["2610.06637"]}
+{"qid": "q56", "query": "what is patmt", "relevant": ["2610.16538"]}
+{"qid": "q57", "query": "what is the purpose of scribe", "relevant": ["2610.01234"]}
+{"qid": "q58", "query": "what is frontier transition credit", "relevant": ["2610.21345"]}
+{"qid": "q59", "query": "why implicit reward is used when a teacher generates too long a rollout", "relevant": ["2610.03185"]}
+{"qid": "q60", "query": "what is icap gate in audio language model", "relevant": ["2610.11196"]}
+{"qid": "q61", "query": "when do icls use parameter", "relevant": ["2610.08630"]}
+{"qid": "q62", "query": "hocimi-ii distance between learners", "relevant": ["2610.19654"]}
+{"qid": "q63", "query": "what is the goal of llm unbranding", "relevant": ["2609.37127"]}
+{"qid": "q64", "query": "how does loopvl work?", "relevant": ["2609.38426"]}
+{"qid": "q65", "query": "what is sparse sampling", "relevant": ["2610.13202"]}
+{"qid": "q66", "query": "what is meant by compressed cache", "relevant": ["2610.20582"]}
+{"qid": "q67", "query": "what is rlvr", "relevant": ["2610.08077"]}
+{"qid": "q68", "query": "what is local citation recommendation corpus", "relevant": ["2610.15832"]}
+{"qid": "q69", "query": "join discovery definition", "relevant": ["2610.00817"]}
+{"qid": "q70", "query": "d loop definition", "relevant": ["2610.06011"]}
+{"qid": "q71", "query": "what is the purpose of deferkv", "relevant": ["2610.06286"]}
+{"qid": "q72", "query": "what is navtree", "relevant": ["2610.06902"]}
+{"qid": "q73", "query": "definition of persona unlearning", "relevant": ["2609.39882"]}
+{"qid": "q74", "query": "apix hard target target", "relevant": ["2610.13623"]}
+{"qid": "q75", "query": "qe reranking", "relevant": ["2610.07545"]}
+{"qid": "q76", "query": "how to measure factuality", "relevant": ["2610.18415"]}
+{"qid": "q77", "query": "what is dimster", "relevant": ["2610.04174"]}
+{"qid": "q78", "query": "why does skill evolution improve", "relevant": ["2610.20926"]}
+{"qid": "q79", "query": "what is docpilot", "relevant": ["2610.21327"]}
+{"qid": "q80", "query": "what is the minimum repetition count for regression analysis", "relevant": ["2610.05126"]}
+{"qid": "q81", "query": "what is d2f", "relevant": ["2610.17654"]}
+{"qid": "q82", "query": "what is autocompact?", "relevant": ["2610.02163"]}
+{"qid": "q83", "query": "what is deep research adaptive rerouting", "relevant": ["2610.15910"]}
+{"qid": "q84", "query": "what is the llm-jp safety interval", "relevant": ["2610.20570"]}
+{"qid": "q85", "query": "what is larc", "relevant": ["2609.40063"]}
+{"qid": "q86", "query": "what is memcodex", "relevant": ["2609.39765"]}
+{"qid": "q87", "query": "how does multilingual babyloan differ from balanced training", "relevant": ["2610.20102"]}
+{"qid": "q88", "query": "what is borgmem", "relevant": ["2610.11314"]}
+{"qid": "q89", "query": "what is the cost of long horizon training", "relevant": ["2610.05831"]}
+{"qid": "q90", "query": "what is the accuracy of qwen llm model", "relevant": ["2610.00689"]}
+{"qid": "q91", "query": "what is the spatial representation subspace", "relevant": ["2610.13527"]}
+{"qid": "q92", "query": "how accurate are linguistic models", "relevant": ["2610.19048"]}
+{"qid": "q93", "query": "what is ARTS hybrid", "relevant": ["2610.13375"]}
+{"qid": "q94", "query": "define role aware attention", "relevant": ["2610.13797"]}
+{"qid": "q95", "query": "what is kvreuse", "relevant": ["2610.18014"]}
+{"qid": "q96", "query": "which prefix is used for steering?", "relevant": ["2610.04967"]}
+{"qid": "q97", "query": "what is the purpose of llm", "relevant": ["2610.16490"]}
+{"qid": "q98", "query": "what is quanling", "relevant": ["2610.08851"]}
+{"qid": "q99", "query": "what is the harness harness", "relevant": ["2609.38291"]}
+{"qid": "q100", "query": "how does citation accuracy differ between label only and rejection sampling", "relevant": ["2610.06962"]}
+{"qid": "q101", "query": "how does a model's decision score change", "relevant": ["2610.05532"]}
+{"qid": "q102", "query": "what is tokenizer", "relevant": ["2610.20859"]}
+{"qid": "q103", "query": "flip effect definition", "relevant": ["2610.06522"]}
+{"qid": "q104", "query": "what is hla", "relevant": ["2610.05842"]}
+{"qid": "q105", "query": "what is skill scaffold", "relevant": ["2610.18807"]}
+{"qid": "q106", "query": "which model family has the greatest in-distribution accuracy?", "relevant": ["2610.08680"]}
+{"qid": "q107", "query": "how accurate is the evidence of a closure case", "relevant": ["2610.03190"]}
+{"qid": "q108", "query": "what is ppmr", "relevant": ["2610.19043"]}
+{"qid": "q109", "query": "define activemedagent", "relevant": ["2610.11140"]}
+{"qid": "q110", "query": "what is presto lm", "relevant": ["2610.13171"]}
+{"qid": "q111", "query": "what is visexmem used for", "relevant": ["2610.16441"]}
+{"qid": "q112", "query": "what is the llora adapter", "relevant": ["2609.38374"]}
+{"qid": "q113", "query": "what is seal in echoset", "relevant": ["2610.07047"]}
+{"qid": "q114", "query": "how are the correctness directions determined", "relevant": ["2610.04512"]}
+{"qid": "q115", "query": "how to use hybrid attention", "relevant": ["2610.07940"]}
+{"qid": "q116", "query": "what is gender related", "relevant": ["2610.17778"]}
+{"qid": "q117", "query": "what is the stance preservation rate?", "relevant": ["2610.04620"]}
+{"qid": "q118", "query": "what is skills forge bench", "relevant": ["2610.14918"]}
+{"qid": "q119", "query": "what is evoduet", "relevant": ["2609.40340"]}
+{"qid": "q120", "query": "what is the context language", "relevant": ["2610.02404"]}
+{"qid": "q121", "query": "explainability framework", "relevant": ["2610.02116"]}
+{"qid": "q122", "query": "what is the difference between precision and interference", "relevant": ["2610.21176"]}
+{"qid": "q123", "query": "what is relay in learning", "relevant": ["2610.17623"]}
+{"qid": "q124", "query": "why do we need role aware attention", "relevant": ["2610.00958"]}
+{"qid": "q125", "query": "what is a dynamic task routing graph", "relevant": ["2610.01249"]}
+{"qid": "q126", "query": "what is the atom linker for nli", "relevant": ["2610.15158"]}
+{"qid": "q127", "query": "what is geofitbench", "relevant": ["2610.12669"]}
+{"qid": "q128", "query": "what is patmt2", "relevant": ["2610.16466"]}
+{"qid": "q129", "query": "what is readout in language models", "relevant": ["2610.21025"]}
+{"qid": "q130", "query": "what's the flip rate of a vlm prescription", "relevant": ["2610.17989"]}
+{"qid": "q131", "query": "what is yoruba", "relevant": ["2609.38627"]}
+{"qid": "q132", "query": "what is synthetic", "relevant": ["2609.37891"]}
+{"qid": "q133", "query": "what is tace", "relevant": ["2610.07767"]}
+{"qid": "q134", "query": "what is catch hack", "relevant": ["2609.39533"]}
+{"qid": "q135", "query": "what is the most relevant source sentence in simple text", "relevant": ["2610.03567"]}
+{"qid": "q136", "query": "can you correct a bias in random sampling", "relevant": ["2610.15165"]}
+{"qid": "q137", "query": "haloblock", "relevant": ["2610.17948"]}
+{"qid": "q138", "query": "what is de framework", "relevant": ["2610.05322"]}
+{"qid": "q139", "query": "which is coarse-to-fine localization?", "relevant": ["2610.09761"]}
+{"qid": "q140", "query": "why do guardrails need to be deterministic", "relevant": ["2610.12813"]}
+{"qid": "q141", "query": "specscale is what type of system", "relevant": ["2609.39334"]}
+{"qid": "q142", "query": "what is sdb", "relevant": ["2609.38612"]}
+{"qid": "q143", "query": "how does dynamic resolution assignment affect multimodal debates", "relevant": ["2610.05615"]}
+{"qid": "q144", "query": "difference between linear and kv quantization", "relevant": ["2610.11214"]}
+{"qid": "q145", "query": "who is the llm", "relevant": ["2610.19367"]}
+{"qid": "q146", "query": "what is rlvr", "relevant": ["2610.16533"]}
+{"qid": "q147", "query": "what is dialogue-to-duplex", "relevant": ["2610.17124"]}
+{"qid": "q148", "query": "how federated learning works", "relevant": ["2610.02957"]}
+{"qid": "q149", "query": "how does steering reduce model bias", "relevant": ["2610.08559"]}
+{"qid": "q150", "query": "what is surprisal", "relevant": ["2610.16636"]}
+{"qid": "q151", "query": "why is tis tis", "relevant": ["2610.02911"]}
+{"qid": "q152", "query": "how to manage expert selection", "relevant": ["2610.07332"]}
+{"qid": "q153", "query": "what is project unlearning in machine learning", "relevant": ["2610.11915"]}
+{"qid": "q154", "query": "what is settle in math", "relevant": ["2609.38997"]}
+{"qid": "q155", "query": "what is tc3-vqa", "relevant": ["2610.07339"]}
+{"qid": "q156", "query": "what language is directed relations", "relevant": ["2610.12742"]}
+{"qid": "q157", "query": "what feedback mechanisms do simulators provide", "relevant": ["2610.13617"]}
+{"qid": "q158", "query": "visual content definition", "relevant": ["2610.19443"]}
+{"qid": "q159", "query": "how many companies listed on lse", "relevant": ["2610.09529"]}
+{"qid": "q160", "query": "what is the purpose of ease in computer science", "relevant": ["2610.09976"]}
+{"qid": "q161", "query": "what is treeflex", "relevant": ["2610.20334"]}
+{"qid": "q162", "query": "why are the actions of a learned agent important", "relevant": ["2610.02769"]}
+{"qid": "q163", "query": "what is valcon", "relevant": ["2610.21304"]}
+{"qid": "q164", "query": "how to use role prompting model", "relevant": ["2609.39884"]}
+{"qid": "q165", "query": "what is a target entity in an llm", "relevant": ["2610.19906"]}
+{"qid": "q166", "query": "who is we", "relevant": ["2610.19202"]}
+{"qid": "q167", "query": "what is quantization pruning", "relevant": ["2610.06026"]}
+{"qid": "q168", "query": "what is icl?", "relevant": ["2610.19113"]}
+{"qid": "q169", "query": "pruning model wanda", "relevant": ["2610.01554"]}
+{"qid": "q170", "query": "what is separq", "relevant": ["2610.04690"]}
+{"qid": "q171", "query": "what is divlm", "relevant": ["2610.06729"]}
+{"qid": "q172", "query": "why is it important to have hierarchical insights", "relevant": ["2610.21048"]}
+{"qid": "q173", "query": "what is counterfactual", "relevant": ["2610.13057"]}
+{"qid": "q174", "query": "which language is neurograf?", "relevant": ["2610.13134"]}
+{"qid": "q175", "query": "what is ufakzeka-karar", "relevant": ["2610.06744"]}
+{"qid": "q176", "query": "who is a persona", "relevant": ["2610.10988"]}
+{"qid": "q177", "query": "what is idea anchor training", "relevant": ["2610.08781"]}
+{"qid": "q178", "query": "does whisper use a pooled lora", "relevant": ["2610.17019"]}
+{"qid": "q179", "query": "what is kasb", "relevant": ["2609.37171"]}
+{"qid": "q180", "query": "what is daedalus", "relevant": ["2610.08048"]}
+{"qid": "q181", "query": "what is the accuracy of a language model?", "relevant": ["2609.39913"]}
+{"qid": "q182", "query": "what is the difference between an attribution score and an influence score", "relevant": ["2609.37914"]}
+{"qid": "q183", "query": "what is mosaic", "relevant": ["2610.22174"]}
+{"qid": "q184", "query": "how does uncertainty heads work", "relevant": ["2610.03482"]}
+{"qid": "q185", "query": "why is the agent scaffolding important in the process of team development?", "relevant": ["2610.19799"]}
+{"qid": "q186", "query": "steering vectors for speech", "relevant": ["2610.04683"]}
+{"qid": "q187", "query": "what is narrative stepter?", "relevant": ["2609.39333"]}
+{"qid": "q188", "query": "what is the demographic merging", "relevant": ["2610.08604"]}
+{"qid": "q189", "query": "which of these is an irreducible component of the evidence lower bound?", "relevant": ["2610.02839"]}
+{"qid": "q190", "query": "what is entropy steering?", "relevant": ["2610.02391"]}
+{"qid": "q191", "query": "why use breadthkv", "relevant": ["2610.05685"]}
+{"qid": "q192", "query": "what is adaptive look", "relevant": ["2610.15810"]}
+{"qid": "q193", "query": "which ra adapter is the internalizer", "relevant": ["2610.11715"]}
+{"qid": "q194", "query": "cka definition", "relevant": ["2610.19134"]}
+{"qid": "q195", "query": "how is evidence and pressure related?", "relevant": ["2610.11305"]}
+{"qid": "q196", "query": "mpt definition", "relevant": ["2610.22322"]}
+{"qid": "q197", "query": "what is engiworld", "relevant": ["2609.37686"]}
+{"qid": "q198", "query": "why are prefix readouts low", "relevant": ["2610.03458"]}
+{"qid": "q199", "query": "what is ssh", "relevant": ["2609.39549"]}

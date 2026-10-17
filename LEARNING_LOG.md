@@ -168,3 +168,36 @@ When a transformer generates token n+1 it needs the keys and values of all earli
 - *Q: What's the weakness of token-overlap metrics?* A: They can't see meaning: paraphrases score low, contradictions with the same words score high.
 
 **Honest status:** 49 tests pass, ruff clean. Network (arxiv.org / huggingface.co / semanticscholar) still unreachable, so there is no real corpus and no real LLM; the extractive generator is a test stand-in. No results yet.
+
+---
+
+## 2026-10-17 (evening) — PaperTrail's first real numbers: what they teach
+
+Network access was opened, so everything M2–M5 built was finally run on real data: 2,000 cs.CL abstracts and two 200-query golden sets. Results are in `projects/papertrail/README.md`. The concepts below are the ones to be able to explain.
+
+### 1. Synthetic golden sets (doc2query) and their bias
+**What:** We had no human-labelled queries, so we generated them. A T5 model trained on MS MARCO reads each abstract and writes a question a user might ask. That abstract becomes the one "relevant" answer.
+**Why:** It is the cheapest way to get hundreds of labelled queries. Real research systems do the same (InPars, GPL).
+**The catch:** the question is written *from the abstract's own words*, so it shares vocabulary with it. That favours keyword search (BM25). The labels are also incomplete: only one paper counts as relevant, even if three others also answer the question. Scores are therefore **lower bounds**, and vague queries are punished.
+**Beam search vs sampling:** beam search picks the most *probable* output, and for this model that collapsed to bland "what is X" questions. Sampling (top-k/top-p) gives more varied, realistic queries. With a fixed seed it is still reproducible.
+
+**Interview Qs**
+- *Q: Your eval set is synthetic. Why should I trust the numbers?* A: Trust them for *comparing configs on the same set*, not as absolute quality. I used two query types with different biases (titles and doc2query), reported the biases, and the conclusions agree on both. The next step is a small hand-labelled set to check them.
+- *Q: What is a false negative in IR evaluation?* A: A relevant document that isn't labelled relevant. Retrieving it counts as a miss, so metrics are biased downward. That bias hits systems that find *different* relevant documents from the ones the labels came from.
+
+### 2. Why hybrid helped recall but not MRR
+RRF adds 1/(60+rank) from each retriever. A paper ranked 3rd by BM25 and 40th by dense can lose to one ranked 8th by both. Fusion is good at getting the right paper *somewhere* in the top 10 (Recall@10 0.825 → 0.875). It is bad at putting it *first* (MRR 0.716 → 0.703), because neither list's confidence is used, only ranks.
+
+- *Q: How would you make hybrid improve MRR too?* A: Tune RRF weights or `c` on a dev set, use score-based fusion with normalisation, or add a reranker (which is what worked here).
+
+### 3. Cross-encoder vs bi-encoder (the big result)
+- A **bi-encoder** (bge-small) embeds the query and each document *separately*. Documents are embedded once and offline, so search is a fast vector lookup (~15 ms).
+- A **cross-encoder** reads the query and document *together*, so every query word can attend to every document word. It is much more accurate but has to run once per (query, doc) pair at query time: 50 pairs ≈ 2 s on CPU.
+- Hence the **two-stage design**: a cheap retriever narrows 2,000 papers to 50, then the expensive reranker orders those 50. MRR went 0.716 → 0.838.
+
+**Interview Qs**
+- *Q: Why not use the cross-encoder on all 2,000 docs?* A: Cost grows linearly with corpus size: 2,000 forward passes ≈ 80 s per query here. Two-stage keeps the cost fixed at top_n pairs.
+- *Q: 2 s per query is too slow. What would you do?* A: Rerank fewer candidates (top 20), use a smaller or distilled reranker, run it with ONNX/int8 quantization, batch on a GPU, or cache frequent queries. Then measure the quality-vs-latency curve instead of guessing.
+
+### 4. "No improvement" is a result
+Query rewriting (expanding "LLM" → "large language model") didn't help and slightly hurt hybrid MRR (−0.014). Reporting that honestly, and switching the feature off, shows more engineering judgement than claiming every component helps.

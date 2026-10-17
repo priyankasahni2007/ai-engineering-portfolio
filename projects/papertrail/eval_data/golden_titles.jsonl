@@ -1,0 +1,200 @@
+{"qid": "t0", "query": "Voltic: Distinguishing Volatility from Stochasticity in Recurrent Memory", "relevant": ["2610.05700"]}
+{"qid": "t1", "query": "SEA-HELM Audio: Evaluating Multilingual ASR-LLM Pipeline Performance Across SEA-HELM Subsets", "relevant": ["2610.19869"]}
+{"qid": "t2", "query": "In the Guise of Correction: How Framing and Cultural Adaptation Erode LLM Safety on Real-World Criminal Cases", "relevant": ["2610.21789"]}
+{"qid": "t3", "query": "Same Output, Different Gold: Measuring How Reference Choice Moves a Multilingual Benchmark Score", "relevant": ["2610.03825"]}
+{"qid": "t4", "query": "ATTCK-R: Knowledge-Aware Long-Horizon Jailbreaking for Protected LLMs", "relevant": ["2610.16305"]}
+{"qid": "t5", "query": "DuoDiscover: Scaling Autonomous Discovery Beyond the Evaluation Bottleneck", "relevant": ["2610.17184"]}
+{"qid": "t6", "query": "Understanding Machine Taste: Aesthetic Agreement Across Foundation Models in K-pop", "relevant": ["2610.17731"]}
+{"qid": "t7", "query": "ForkGRPO: Efficient Exploration and Fine-Grained Credit Assignment for Diffusion Language Models", "relevant": ["2610.19408"]}
+{"qid": "t8", "query": "Unmasking Propaganda: A Comparative Analysis of Masked and Causal Language Models", "relevant": ["2610.03077"]}
+{"qid": "t9", "query": "Which Knowledge Should LLMs Trust? Uncovering a Generalizable Steering Direction Across Knowledge Conflicts", "relevant": ["2610.20067"]}
+{"qid": "t10", "query": "Agent Behavior as Code: Efficient and Robust LLM Agents with Programmatic Specifications", "relevant": ["2610.04824"]}
+{"qid": "t11", "query": "Verifiable, Articulable, and Tacit Components of Preference", "relevant": ["2610.03025"]}
+{"qid": "t12", "query": "Beyond Text: LLM-Based Dimensional Emotion Evaluation in Multimodal Dialogue", "relevant": ["2609.39072"]}
+{"qid": "t13", "query": "Language Unalignability: Why Some Concepts Resist Cross-Cultural Benchmark Evaluation", "relevant": ["2610.08303"]}
+{"qid": "t14", "query": "Analyzing performance of Retrieval Augmented Generation models for Question Answering Tasks", "relevant": ["2610.20419"]}
+{"qid": "t15", "query": "Base Models Can Reason By Taking a Cue From Training Data", "relevant": ["2610.06851"]}
+{"qid": "t16", "query": "ILM: An AI-Powered Storytelling Educational Tool", "relevant": ["2610.12064"]}
+{"qid": "t17", "query": "The Self-Improvement Problem", "relevant": ["2610.21646"]}
+{"qid": "t18", "query": "No Single Tokenizer Feature Reliably Predicts Downstream Language Model Performance", "relevant": ["2610.21679"]}
+{"qid": "t19", "query": "CSWBench: Evaluating Context-Sensitive Code-Switching in Creative Writing", "relevant": ["2610.20272"]}
+{"qid": "t20", "query": "Where Words Begin and End", "relevant": ["2610.17782"]}
+{"qid": "t21", "query": "EdgeWise: Bringing Long-Horizon Agents to the Edge via Selective Cloud Delegation", "relevant": ["2610.17560"]}
+{"qid": "t22", "query": "When Rank Rises as LLMs Degrade", "relevant": ["2610.09647"]}
+{"qid": "t23", "query": "What Matters for Latent Reasoning with Flow Matching", "relevant": ["2610.06666"]}
+{"qid": "t24", "query": "Reliable Knowledge Acquisition for Continual Learning Agents", "relevant": ["2610.21739"]}
+{"qid": "t25", "query": "Lost in the bf16 Cast: Exporting Ternary Language Models Can Revert Most Low-Learning-Rate Code Changes", "relevant": ["2610.07853"]}
+{"qid": "t26", "query": "PAINT: A Framework for Multilingual Pain Representation from Medical Licensing Exams to Real-World Clinical Texts", "relevant": ["2610.18269"]}
+{"qid": "t27", "query": "FrugalEvo: Towards Cost-Aware LLM-Guided Program Evolution", "relevant": ["2610.03675"]}
+{"qid": "t28", "query": "Investigating Model Compression for Neural Machine Translation in the Biomedical Domain", "relevant": ["2610.07032"]}
+{"qid": "t29", "query": "Playing social deduction games with reinforcement fine-tuned large language models", "relevant": ["2610.04261"]}
+{"qid": "t30", "query": "When KL Regularization Misfires in Group Policy Optimization", "relevant": ["2610.12161"]}
+{"qid": "t31", "query": "Many Right Answers, One Training Example: Removing Responder Noise from GRPO for LLM Recommenders", "relevant": ["2610.17771"]}
+{"qid": "t32", "query": "From a Prompt to Repertoires: Evolving Functional REpertoires Enable LLM Continual Learning", "relevant": ["2610.11373"]}
+{"qid": "t33", "query": "Learning Scientific Exploration from Human Research Decision Trajectories", "relevant": ["2610.07184"]}
+{"qid": "t34", "query": "Avoiding What Your Teacher Already Knows: Entity Familiarity for Deep-Search Distillation", "relevant": ["2610.16251"]}
+{"qid": "t35", "query": "Persistent Depth Ordering amid Shifting Block-Bypass Responses in Language Model Pretraining", "relevant": ["2610.01165"]}
+{"qid": "t36", "query": "A helps B while B hurts A: directed transfer in instruction-tuning mixture", "relevant": ["2609.39702"]}
+{"qid": "t37", "query": "Librarian Agents: Training LLMs to Curate Long-Context Workspaces that Anticipate Future Queries", "relevant": ["2610.22273"]}
+{"qid": "t38", "query": "Large language models exhibit unreliable updating of clinical judgment as patient evidence evolves", "relevant": ["2610.02684"]}
+{"qid": "t39", "query": "Evaluating the Robustness of Japanese LLMs to IME-Related and Typographical Errors", "relevant": ["2610.01241"]}
+{"qid": "t40", "query": "DecisionRobust: Benchmarking Robustness for JEV Style Decision Models Across Text and Vision", "relevant": ["2610.19118"]}
+{"qid": "t41", "query": "Evaluating Modeling Approaches for Experience-Level Classification in Job Description", "relevant": ["2610.04304"]}
+{"qid": "t42", "query": "When Should Agents Think? Adaptive Reasoning via Cross-Turn Estimation", "relevant": ["2610.12061"]}
+{"qid": "t43", "query": "MemForm: Benchmarking Memory Formation Poisoning in LLM Agents", "relevant": ["2610.14431"]}
+{"qid": "t44", "query": "ListQA: A Benchmark for Evaluating List-Formatted Factual Knowledge Retrieval in Large Language Models", "relevant": ["2610.19165"]}
+{"qid": "t45", "query": "Training LLMs for Multi-Agent Collaboration with Verifiable Information Rewards", "relevant": ["2610.17893"]}
+{"qid": "t46", "query": "Correct, Don't Delete: Mitigating Emergent Misalignment with Corrective Supervision", "relevant": ["2609.37624"]}
+{"qid": "t47", "query": "Right Order, Wrong Scale: Auditing LLM Judges for Occupational AI Measurement", "relevant": ["2610.02492"]}
+{"qid": "t48", "query": "AphaVoice: Text-to-Speech Model for Aphasia Patient Simulation", "relevant": ["2610.14479"]}
+{"qid": "t49", "query": "Taking the PULSE of Medical Reasoning: Step-Level Retrieval Timing for Knowledge-Grounded Inference", "relevant": ["2610.20292"]}
+{"qid": "t50", "query": "Scaling Agentic Data for Long-Horizon Terminal Intelligence", "relevant": ["2610.13166"]}
+{"qid": "t51", "query": "Cross-Model In-Context Neurofeedback Reveals (Limited) Activation Control in LLMs", "relevant": ["2610.20179"]}
+{"qid": "t52", "query": "Retractions Revisited: A Replication, Extension, and Mechanistic Evaluation of Linguistic Obfuscation Effects in Fraudulent Science", "relevant": ["2610.13678"]}
+{"qid": "t53", "query": "Distribution Matching Distillation for Continuous Diffusion Language Models", "relevant": ["2609.40235"]}
+{"qid": "t54", "query": "Which Metadata Matters for LLM Tool Selection in MCP? Evidence from Controlled Factor-Level Interventions", "relevant": ["2610.14334"]}
+{"qid": "t55", "query": "Long-Horizon Textual World Modeling through Structured Reasoning", "relevant": ["2610.06637"]}
+{"qid": "t56", "query": "PatTransBench: an ipc-stratified, multi-dimensional benchmark for patent machine translation evaluation", "relevant": ["2610.16538"]}
+{"qid": "t57", "query": "ASCRIBE: Atomic and Significance-Based Reasoning for Thai Clinical SOAP Note Generation", "relevant": ["2610.01234"]}
+{"qid": "t58", "query": "OpCredit: Operation-Aware Policy Learning for Agentic Knowledge Graph Question Answering", "relevant": ["2610.21345"]}
+{"qid": "t59", "query": "Gains and Collapse in On-Policy Distillation:A Reinforcement Learning Perspective", "relevant": ["2610.03185"]}
+{"qid": "t60", "query": "Selective Listening: Mechanism-Guided Control of Audio Influence in Large Audio-Language Models", "relevant": ["2610.11196"]}
+{"qid": "t61", "query": "Towards In-Parameter Memory Augmentation for Large Language Models", "relevant": ["2610.08630"]}
+{"qid": "t62", "query": "HACHIMI-II: From Role-Play to Learner Behavior Modeling for Faithful Student Simulation", "relevant": ["2610.19654"]}
+{"qid": "t63", "query": "LLM unbranding: Erasing Commercial Identity while Preserving Generic Utility", "relevant": ["2609.37127"]}
+{"qid": "t64", "query": "LoopVL: Recurrent Visual Intelligence", "relevant": ["2609.38426"]}
+{"qid": "t65", "query": "S$^3$R: Fast and Faithful RL Rollouts via Self-Sparse Speculative Decoding", "relevant": ["2610.13202"]}
+{"qid": "t66", "query": "Latent Compaction with Test-Time Training", "relevant": ["2610.20582"]}
+{"qid": "t67", "query": "Self-Retrospection Distillation: Turning Post-hoc Experiences into Prior Foresight", "relevant": ["2610.08077"]}
+{"qid": "t68", "query": "Local Citation Recommendation Without Graph Signals", "relevant": ["2610.15832"]}
+{"qid": "t69", "query": "TabJoinBench: A Benchmark for Joinable Table Discovery", "relevant": ["2610.00817"]}
+{"qid": "t70", "query": "D-Loop: Looped Diffusion Drafting for Speculative Decoding", "relevant": ["2610.06011"]}
+{"qid": "t71", "query": "DeferKV: Rethinking Eviction Timing for One-Shot KV Cache Compression", "relevant": ["2610.06286"]}
+{"qid": "t72", "query": "Tree Navigation Without LLM Summaries: A Matched-Cost Study of Hierarchical Retrieval for Long-Document QA", "relevant": ["2610.06902"]}
+{"qid": "t73", "query": "LLM Persona Unlearning", "relevant": ["2609.39882"]}
+{"qid": "t74", "query": "APEX-Harm: Evaluating Agent Safety in Shared Professional Workspaces", "relevant": ["2610.13623"]}
+{"qid": "t75", "query": "Quality-Aware Self-Correcting Speech Translation on an Edge Device", "relevant": ["2610.07545"]}
+{"qid": "t76", "query": "Do Factuality Methods Make LLMs More Factual? Reproducibility and Fair Comparison", "relevant": ["2610.18415"]}
+{"qid": "t77", "query": "DimSteer: Steering LLM Authoring with Automatically Discovered Stylistic Controls", "relevant": ["2610.04174"]}
+{"qid": "t78", "query": "SkillNEO: Non-Elitist Evolutionary Optimization of Agent Skills", "relevant": ["2610.20926"]}
+{"qid": "t79", "query": "DocPilot: Interactive Agent Orchestration and Training for Long Visual Document Understanding", "relevant": ["2610.21327"]}
+{"qid": "t80", "query": "Selecting Repetition Counts Across Model Scales in Data-Constrained Pretraining", "relevant": ["2610.05126"]}
+{"qid": "t81", "query": "Decouple to Forget: Semantic Mediation for Sensitive Unlearning in Large Language Models", "relevant": ["2610.17654"]}
+{"qid": "t82", "query": "AutoCompact: Learning When to Compact Context in Long-Horizon Coding Agents", "relevant": ["2610.02163"]}
+{"qid": "t83", "query": "RIVO: Lightweight Adaptive Rerouting for Deep Research Agents", "relevant": ["2610.15910"]}
+{"qid": "t84", "query": "Manac\u00e1-1B-Instruct-2: Reproducible Safety Alignment for a Native Brazilian-Portuguese LLM. Negative DPO Results, a Controlled Composition Scan, and a Silent Failure Mode of the LLM Judge", "relevant": ["2610.20570"]}
+{"qid": "t85", "query": "LARC: Low-Rank Adaptive Residual Connections for Learning in Frozen Models", "relevant": ["2609.40063"]}
+{"qid": "t86", "query": "MemCodex: Self-Programming Hierarchical Memory for Language Agents", "relevant": ["2609.39765"]}
+{"qid": "t87", "query": "Language Exposure Matters: Distribution and Order in Multilingual BabyLM Pre-training", "relevant": ["2610.20102"]}
+{"qid": "t88", "query": "From Retrieval to Reconstruction: Constructing Evolvable Cognitive Memory for Long-Term Dialogue", "relevant": ["2610.11314"]}
+{"qid": "t89", "query": "Selecting Long-Horizon Trajectories for Reliable and Efficient Terminal-Agent Training", "relevant": ["2610.05831"]}
+{"qid": "t90", "query": "Towards Robust Numerical Claim Verification", "relevant": ["2610.00689"]}
+{"qid": "t91", "query": "S-Space: Exploring Spatial Workspace in Multimodal Language Models", "relevant": ["2610.13527"]}
+{"qid": "t92", "query": "Pre-Trained Language Models as Zero-Shot Tools for Social Science Research", "relevant": ["2610.19048"]}
+{"qid": "t93", "query": "From Structure to Validity: Mechanism-Guided Generation and Refinement of LLM Rubrics", "relevant": ["2610.13375"]}
+{"qid": "t94", "query": "REFLECT: Role-Aware Detection of Sentiment, Emotion, Politeness, and Formality", "relevant": ["2610.13797"]}
+{"qid": "t95", "query": "LatentRemedy: Efficient Remedy For Non-Prefix KV Cache Reuse in Multi-Agent Systems", "relevant": ["2610.18014"]}
+{"qid": "t96", "query": "One Token Can Be Enough: Bridging Prompting and Activation Steering with Prefix Steering", "relevant": ["2610.04967"]}
+{"qid": "t97", "query": "Communication, Vocalisation, and Language", "relevant": ["2610.16490"]}
+{"qid": "t98", "query": "QuanLing: Cross-Branch Validation of Language Distance Quantification on Western Romance", "relevant": ["2610.08851"]}
+{"qid": "t99", "query": "HARDE: Optimizing Agent Harnesses for Runtime Risk Detection and Execution Control", "relevant": ["2609.38291"]}
+{"qid": "t100", "query": "Verdicts Without Annotated Evidence: Rejection Sampling or Label-Only Post-Training for Evidence Recovery?", "relevant": ["2610.06962"]}
+{"qid": "t101", "query": "DelegationBench: Measuring When AI Agents Should Ask Before Acting", "relevant": ["2610.05532"]}
+{"qid": "t102", "query": "Does Morphological Correctness Matter for Tokenization? A Scrambled Control Study in Tagalog", "relevant": ["2610.20859"]}
+{"qid": "t103", "query": "Anatomy of LLM Sycophancy: What a Flip Rate Hides", "relevant": ["2610.06522"]}
+{"qid": "t104", "query": "HLA: Expressive Hybrid Linear Attention via Chunk-Wise Dynamic Mixing", "relevant": ["2610.05842"]}
+{"qid": "t105", "query": "SkillScaffold: Scaffolding Agentic Reinforcement Learning with Policy-Adaptive Skill Credit Assignment and Selective Injection", "relevant": ["2610.18807"]}
+{"qid": "t106", "query": "A Systematic Study of Small Language Models on Abstract Reasoning Tasks", "relevant": ["2610.08680"]}
+{"qid": "t107", "query": "Not Until the Evidence Says So: Teaching LLM Investigators When to Close a Case", "relevant": ["2610.03190"]}
+{"qid": "t108", "query": "Graph Coarsening Enables Escaping Local Optima in Compute-Constrained Nonconvex MAX-CUT", "relevant": ["2610.19043"]}
+{"qid": "t109", "query": "ActiveMedAgent: Cost-Aware Trajectory Learning for Multimodal Medical Diagnosis", "relevant": ["2610.11140"]}
+{"qid": "t110", "query": "PreSTO: Predictive Subtree Prefetching for Fast LLM Power Sampling", "relevant": ["2610.13171"]}
+{"qid": "t111", "query": "VisExMEM: Visual Evidence-Based Explainable Multimodal Evaluation Metric", "relevant": ["2610.16441"]}
+{"qid": "t112", "query": "Doc2LoRA Provides Decodable Representations of Scientific Ideas", "relevant": ["2609.38374"]}
+{"qid": "t113", "query": "SEAL: Mixture-Closed Additive Reconstruction and Refinement-Aware Expert Routing for Efficient Speech Separation", "relevant": ["2610.07047"]}
+{"qid": "t114", "query": "Correctness Is a Direction: Geometric Answer Selection in Language Models", "relevant": ["2610.04512"]}
+{"qid": "t115", "query": "Hybrid Latent Attention for Looped Language Models", "relevant": ["2610.07940"]}
+{"qid": "t116", "query": "GENDIS: Gender-Related Discourse and Stance in Multilingual YouTube Comments from India, Kenya, and Nigeria", "relevant": ["2610.17778"]}
+{"qid": "t117", "query": "Stance Drift: How AI-mediated Communication Distorts Our Message", "relevant": ["2610.04620"]}
+{"qid": "t118", "query": "SkillForgeBench: Evaluating Agent Reliability Grounded in Agent Skill Specifications", "relevant": ["2610.14918"]}
+{"qid": "t119", "query": "EvoDuet: Bilevel Co-Evolution of Web Searching and Task Solving for Scientific Discovery", "relevant": ["2609.40340"]}
+{"qid": "t120", "query": "Trained Agentic Context Management", "relevant": ["2610.02404"]}
+{"qid": "t121", "query": "A Comparative Explainability Framework for DeBERTa-v3 in Zero-Shot Medical Abstract Classification", "relevant": ["2610.02116"]}
+{"qid": "t122", "query": "Language Models Share a Readout Bottleneck in Working Memory", "relevant": ["2610.21176"]}
+{"qid": "t123", "query": "RELAY: Selective Self-Distillation with Adaptive Hand-off for Rubric-Based Reinforcement Learning", "relevant": ["2610.17623"]}
+{"qid": "t124", "query": "Role-aware Heuristic Episodic Attention for Conversational LLMs", "relevant": ["2610.00958"]}
+{"qid": "t125", "query": "Revision-Aware Independent Agent Graphs for Dynamic Reasoning", "relevant": ["2610.01249"]}
+{"qid": "t126", "query": "Learning Proposition-Level Links from Sentence-Level Supervision for Neuro-Symbolic NLI", "relevant": ["2610.15158"]}
+{"qid": "t127", "query": "GeoFitBench-LLM: A Benchmark for Assessing Large Language Models' Capabilities in Geospatial Data Requirements Elicitation for Geo-Analytic Tasks", "relevant": ["2610.12669"]}
+{"qid": "t128", "query": "PATMT2: Two-stage domain adaptation for multilingual patent translation", "relevant": ["2610.16466"]}
+{"qid": "t129", "query": "Learning to Read Out: Unembedding Dynamics in Language Model Pretraining", "relevant": ["2610.21025"]}
+{"qid": "t130", "query": "Seeing Through the Forgery Is Not Enough: Regressive Sycophancy under Fabricated Evidence in Medical Vision-Language Models", "relevant": ["2610.17989"]}
+{"qid": "t131", "query": "Marking Contour Tones in Yor\u00f9b\u00e1: A Typographic and Computational Proposal", "relevant": ["2609.38627"]}
+{"qid": "t132", "query": "It's All Training: A Fully Synthetic Single-Stage Recipe for LLMs", "relevant": ["2609.37891"]}
+{"qid": "t133", "query": "TRACE: Rollout-Guided Quantization-Aware Training for FP4 Reinforcement Learning of MoE Language Models", "relevant": ["2610.07767"]}
+{"qid": "t134", "query": "CATCH: A Controllable Analysis Testbed for Reward Hacking in Coding RL", "relevant": ["2609.39533"]}
+{"qid": "t135", "query": "Writerslogic at the CLEF 2026 SimpleText Track: Multi-Candidate LLM Simplification and Stacked Complexity Spotting", "relevant": ["2610.03567"]}
+{"qid": "t136", "query": "Active Learning for Finding a Needle in a Haystack", "relevant": ["2610.15165"]}
+{"qid": "t137", "query": "HaloBlock: Faster and Better Decoding for Diffusion Large Language Models", "relevant": ["2610.17948"]}
+{"qid": "t138", "query": "When Does Longer Reasoning Help? Predicting Mathematical Reasoning Through Discovery and Execution", "relevant": ["2610.05322"]}
+{"qid": "t139", "query": "PARC-Loc: Text-to-Point-Cloud Localization with Partial Assignment and Relational Consistency", "relevant": ["2610.09761"]}
+{"qid": "t140", "query": "VEPA: Verified Evolving Formal Policy for Lifelong LLM Agent Guardrails", "relevant": ["2610.12813"]}
+{"qid": "t141", "query": "Taming Speculative Search for Test-Time Scaling in LLM Serving", "relevant": ["2609.39334"]}
+{"qid": "t142", "query": "StreamDecisionBench: Evaluating Decisions in Force on Evolving Language Streams", "relevant": ["2609.38612"]}
+{"qid": "t143", "query": "DREAM: Dynamic Resolution Assignment For Multimodal Multi-agent Debate", "relevant": ["2610.05615"]}
+{"qid": "t144", "query": "Bridging KV-Cache Quantization and Linear Attention: From Theory to Pretrained Weight Migration", "relevant": ["2610.11214"]}
+{"qid": "t145", "query": "Beyond Corrected Actions: Training LLM Agents on Textual Critiques", "relevant": ["2610.19367"]}
+{"qid": "t146", "query": "Spectral-Driven Adaptive-Rank Optimizer for Large Language Model Reinforcement Learning with Verifiable Rewards", "relevant": ["2610.16533"]}
+{"qid": "t147", "query": "D2: High-Capability Full-Duplex Spoken Language Models from Half-Duplex Backbones", "relevant": ["2610.17124"]}
+{"qid": "t148", "query": "Understanding Trajectory Heterogeneity in Federated World Model Learning", "relevant": ["2610.02957"]}
+{"qid": "t149", "query": "Latent space bias directions in LLMs capture confidence, not fairness", "relevant": ["2610.08559"]}
+{"qid": "t150", "query": "SuPER-Mamba: Surprisal Prioritization for Extended-Context Routing in Mamba", "relevant": ["2610.16636"]}
+{"qid": "t151", "query": "Probe the Harness: Setup Checks for Stale-Data RL Comparisons in Language Models", "relevant": ["2610.02911"]}
+{"qid": "t152", "query": "Structuring MoE Expert Selection for Agentic Reinforcement Learning", "relevant": ["2610.07332"]}
+{"qid": "t153", "query": "Not Every Change Is Necessary: Recoverable Drift in Large Language Model Unlearning", "relevant": ["2610.11915"]}
+{"qid": "t154", "query": "Settle: Learning When to Stop Reasoning", "relevant": ["2609.38997"]}
+{"qid": "t155", "query": "A doctrine-grounded visual question answering dataset for Tactical Combat Casualty Care", "relevant": ["2610.07339"]}
+{"qid": "t156", "query": "U4RASD at KnowledgeGraphEval-2026: Ontology-Constrained Encoder and LLM Systems for Arabic Relation Extraction", "relevant": ["2610.12742"]}
+{"qid": "t157", "query": "Training User Simulators with Latent Intrinsic Feedback", "relevant": ["2610.13617"]}
+{"qid": "t158", "query": "More Than Seeing: Vision as Scalable Anchors in Native Multimodal Pre-Training", "relevant": ["2610.19443"]}
+{"qid": "t159", "query": "A Comparative Study of Evaluation Metrics for Long-Document Financial Narrative Summarization with Transformers", "relevant": ["2610.09529"]}
+{"qid": "t160", "query": "EASE: Entropy-Adaptive Distribution Shaping for Evading AI-generated Text Detectors", "relevant": ["2610.09976"]}
+{"qid": "t161", "query": "TreeFlex: Agents Navigating Their Own Search Trees", "relevant": ["2610.20334"]}
+{"qid": "t162", "query": "When History Fails to Become Experience: Action Calibration in Language Agents", "relevant": ["2610.02769"]}
+{"qid": "t163", "query": "VALCON: Benchmarking and Enhancing Value Consistency in Large Language Models via Dual-Role Variation", "relevant": ["2610.21304"]}
+{"qid": "t164", "query": "OPSRD: On-Policy Self-Role Distillation", "relevant": ["2609.39884"]}
+{"qid": "t165", "query": "Beyond Benchmark Accuracy: A Diagnostic Test for LLM Chemical Prediction", "relevant": ["2610.19906"]}
+{"qid": "t166", "query": "Weighted Ensemble Sampling for Rare-Event Estimation in Language Models", "relevant": ["2610.19202"]}
+{"qid": "t167", "query": "Differentiable Bit-Widths: Co-optimizing Pruning and Quantization via SVD for Ultra-Efficient LLM Compression", "relevant": ["2610.06026"]}
+{"qid": "t168", "query": "From Copying to Composition: How Language Models Develop In-Context Learning", "relevant": ["2610.19113"]}
+{"qid": "t169", "query": "QK-Wanda: Coupling Queries and Keys for Unstructured Pruning", "relevant": ["2610.01554"]}
+{"qid": "t170", "query": "SepRQ : Self-Supervised Speech Mixture Representation Learning via Mask-Free, Multi-Scale Source Separation", "relevant": ["2610.04690"]}
+{"qid": "t171", "query": "Improving Diversity in LLM Short Story Generation", "relevant": ["2610.06729"]}
+{"qid": "t172", "query": "SHIP: Structured and Hierarchical Insight with Privacy", "relevant": ["2610.21048"]}
+{"qid": "t173", "query": "CoBe: A Benchmark For Conversational Counterfactual Text Editing", "relevant": ["2610.13057"]}
+{"qid": "t174", "query": "Neurograf v1: An End-to-End Romanian-First Language Model Family", "relevant": ["2610.13134"]}
+{"qid": "t175", "query": "ufakzeka-karar: An Open Turkish Typed-Decision Model with Order-Invariant Option Scoring", "relevant": ["2610.06744"]}
+{"qid": "t176", "query": "Back in Style: A Sociolinguistic Approach to Authoring and Measuring Persona Fidelity in User Simulation", "relevant": ["2610.10988"]}
+{"qid": "t177", "query": "IdeaAnchor: Teaching LLMs to Turn Literature into Research Ideas", "relevant": ["2610.08781"]}
+{"qid": "t178", "query": "Understanding Personalization Gains in Whisper", "relevant": ["2610.17019"]}
+{"qid": "t179", "query": "Bridging Semantic Gaps in RAG through Generated Context Knowledge Fusion", "relevant": ["2609.37171"]}
+{"qid": "t180", "query": "DAEDALUS: Bootstrapping Agent Memory from Self-Generated Tasks", "relevant": ["2610.08048"]}
+{"qid": "t181", "query": "The Concrete-Arbitrary Gap: Kinship Reasoning in LLMs Is Not Indifferent to Presentation", "relevant": ["2609.39913"]}
+{"qid": "t182", "query": "The Unequal Influence of Bad Advice: Using Training Data Attribution to Modulate Emergent Misalignment", "relevant": ["2609.37914"]}
+{"qid": "t183", "query": "Mosaic: Multi-Session Agentic Reinforcement Learning", "relevant": ["2610.22174"]}
+{"qid": "t184", "query": "Single-Pass Uncertainty Heads for Claim-Level Hallucination Detection in Persian Medical Language Models", "relevant": ["2610.03482"]}
+{"qid": "t185", "query": "Evolve Together, Fall into Place: How Social Scaffolding Shapes Self-Evolving Multi-Agent Systems", "relevant": ["2610.19799"]}
+{"qid": "t186", "query": "Steering Speech-Language Models: Training-Free Task Specialization via Contrastive Activation Addition", "relevant": ["2610.04683"]}
+{"qid": "t187", "query": "NarrativeSteward: Coordinating Delegation, Guidance, and Verification in Agent-Assisted Interactive Narrative Authoring", "relevant": ["2609.39333"]}
+{"qid": "t188", "query": "InterCorrect: Intersection-Aware Correction of Demographic Model Merging for Fair ASR", "relevant": ["2610.08604"]}
+{"qid": "t189", "query": "To Explore The Strange New World Beyond Data Distribution: System Behavior, Causality Tax, and Non-causal Base Model", "relevant": ["2610.02839"]}
+{"qid": "t190", "query": "Hesitation Has a Geometry: Entropy-Trained Hyperbolic Probes for Sparse Activation Steering", "relevant": ["2610.02391"]}
+{"qid": "t191", "query": "Spend Bytes on Breadth: Precision-Count Trade-offs for Decode-Time KV Compression in Long Chain-of-Thought Reasoning", "relevant": ["2610.05685"]}
+{"qid": "t192", "query": "Adaptive Look, Flexible Thought: Learning How and How Long to Think in Multimodal Reasoning", "relevant": ["2610.15810"]}
+{"qid": "t193", "query": "Internalizer: Portable Context-to-Parameter Mapping for Very Large Language Models", "relevant": ["2610.11715"]}
+{"qid": "t194", "query": "CAFE: Confining Feature Distillation to Language-Routed Adapters for Compact Multilingual Automatic Speech Recognition", "relevant": ["2610.19134"]}
+{"qid": "t195", "query": "BeliefScope: Diagnosing Evidence-Driven Revision and Pressure-Induced Shifts in Large Language Models", "relevant": ["2610.11305"]}
+{"qid": "t196", "query": "Learning Self-Orchestration in Decentralized Agent Swarms", "relevant": ["2610.22322"]}
+{"qid": "t197", "query": "EngiWorld: What Can Frontier Agents Deliver in Professional Engineering Environments?", "relevant": ["2609.37686"]}
+{"qid": "t198", "query": "A Near-Zero Monitor Readout Is Not Evidence of Behavioral Control", "relevant": ["2610.03458"]}
+{"qid": "t199", "query": "Speculative Safety Honeypot: Toward Proactive Defense Against Multi-turn Agent Attacks", "relevant": ["2609.39549"]}

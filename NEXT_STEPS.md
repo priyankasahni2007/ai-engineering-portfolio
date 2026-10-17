@@ -23,14 +23,16 @@ It is already listed on her resume as "in progress", so it must be built FIRST a
 - 2026-10-16 — PaperTrail M4: reranker wrapper + cross-encoder, query rewriting, eval runner with latency p50/p95, ADR 0004, 40 tests pass. Network still blocked (re-tested).
 
 - 2026-10-17 — PaperTrail M5: `generation/` (prompt, citation validation, lexical faithfulness, extractive generator, `answer_question`), ADR 0005, 49 tests pass. Network still blocked (curl to export.arxiv.org, huggingface.co, semanticscholar all fail).
+- 2026-10-17 (evening, manual run after network opened): ingested 2,000 real cs.CL abstracts, built 2 golden sets, first real retrieval evaluation (6 configs). ADR 0006.
 
-## Next run (Day 8) — PaperTrail M6: FastAPI + Docker
-- Re-test network first. If open: fetch ~2k abstracts, synthetic golden set, run all configs via `eval.runner.compare`, put REAL numbers in README results table.
-- Otherwise: `api/` FastAPI app (`/health`, `/search`, `/answer` using BM25+hybrid with offline fakes selectable by env var, pydantic response models with citations + per-stage latency), TestClient tests, Dockerfile + docker-compose, CI step, ADR 0006. Cost/query field in response (tokens x configurable price; 0 for local).
-- LEARNING_LOG: API design for ML services (startup-time index loading, pydantic schemas, health checks), Docker layering.
-- Then M7: README with architecture diagram + failure cases; fill results once data exists.
+## Next run — PaperTrail M6: FastAPI + Docker (network is now open)
+- First real results exist (2026-10-17 evening, manual run): see `projects/papertrail/README.md` Results and ADR 0006. Don't re-run the full eval unless code changes; it takes ~16 min on CPU.
+- Build M6: `api/` FastAPI app (`/health`, `/search?config=bm25|hybrid|hybrid_rerank`, `/answer`), indexes loaded once at startup, pydantic response models with citations, per-stage latency and a cost/query field (0 for local models). TestClient tests using offline fakes (HashingEmbedder, OverlapReranker) so CI needs no downloads. Dockerfile + docker-compose, CI step, ADR 0007.
+- Small add-on if time allows: make `eval/runner.py` keep per-query results and add a paired bootstrap CI for MRR differences (rerank vs bm25, hybrid vs bm25). Report CIs in the README.
+- Later queue: rerank top_n sweep (10/20/50) for a quality-vs-latency curve; scale to 10k+ papers (multiple categories, ~15 min arXiv fetch); wire a local or API LLM for M5 generation + faithfulness; 30–50 hand-labelled queries.
+- LEARNING_LOG: API design for ML services (startup loading, schemas, health checks), Docker layering.
 
 ## Needs Priyanka
-- **Decision (blocking real results, raised again Day 4):** the build sandbox can't reach arxiv.org/huggingface.co. Easiest fix: in your Claude environment settings, allow network access to `export.arxiv.org` and `huggingface.co` (or full access). Otherwise run `make install && python -m papertrail.cli --category cs.CL --n 2000` on your own laptop and commit `data/` metadata is gitignored — tell me and we'll pick another route.
+- **Resume check (important):** draft bullets with real numbers are in `PORTFOLIO_ROADMAP.md` → PaperTrail → Resume bullets. Your resume says "10,000+ papers", but the measured corpus is 2,000. Either change it to 2,000 now or wait for the scale-up run.
 - Start the parallel DSA track yourself (a few problems per week).
-- Later: an LLM API key helps the agent project (not needed for M2–M4).
+- Later: an LLM API key helps generation/faithfulness (M5) and the agent project. Optional; a local model will be tried first.

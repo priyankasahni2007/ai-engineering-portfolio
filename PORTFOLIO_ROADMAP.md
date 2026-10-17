@@ -8,7 +8,7 @@ _Last updated: 2026-10-17 (Day 7). Target: Applied AI / AI Engineer / ML Enginee
 
 | # | Project | Slug | Status | Target window |
 |---|---|---|---|---|
-| 1 | PaperTrail — evaluated hybrid RAG over arXiv (**locked**) | `papertrail` | In progress — M1–M5 code done; real data/embeddings pending network | 13 Oct – 30 Nov 2026 (v1 by end Nov) |
+| 1 | PaperTrail — evaluated hybrid RAG over arXiv (**locked**) | `papertrail` | In progress — M1–M5 done; **first real retrieval results 2026-10-17**; M6 API/Docker next | 13 Oct – 30 Nov 2026 (v1 by end Nov) |
 | 2 | Research agent on top of PaperTrail | `papertrail-agent` | Planned | Dec 2026 – mid Jan 2027 (winter break) |
 | 3 | LLM inference lab (tiny transformer, KV cache, quantization, batching) | `llm-inference-lab` | Planned | mid Jan – Feb 2027 |
 | 4 | Two-stage recsys / ranking with A/B-style analysis | `rec-ranking` | Planned | Mar – Apr 2027 |
@@ -22,7 +22,7 @@ Why this order: internship applications for Summer 2027 open roughly Oct 2026 �
 ~1 hr/day of Priyanka's review; the daily run does the building. Classes limit mid-semester pace; Dec 2026 – Jan 2027 winter break = extra time (agent project and start of LLM lab). **Parallel DSA track** (not a project): ~3–4 sessions/week on LeetCode-style problems + one system-design topic/week — Google-type internship screens *require* DSA (market §1 #6).
 
 ## Biggest portfolio gaps (today)
-1. **No public, finished, evaluated project yet** — repo only has research. PaperTrail v1 closes this.
+1. **No public, finished, evaluated project yet.** PaperTrail now has real retrieval numbers (2026-10-17), but no API, demo or generation results yet. PaperTrail v1 closes this.
 2. **No evidence of production engineering** (API, Docker, CI, tests) — built into every project from the skeleton.
 3. **No classic-MLE evidence** (training loop, feature pipeline, offline→online metrics) — project 4.
 4. **No systems/internals depth** — project 3.
@@ -39,8 +39,11 @@ Why this order: internship applications for Summer 2027 open roughly Oct 2026 �
 - **Tech stack (why):** Python (baseline, 71% of postings) · `rank_bm25`/own BM25 (exact-term matching: "LoRA", "KV-cache") · sentence-transformers embeddings + **FAISS** (dense recall on paraphrases; fast CPU ANN) · RRF fusion (no score calibration) · cross-encoder reranker via Hugging Face Transformers/PyTorch (precision at top-k) · query rewriting (fix vague queries; measured, may not help) · small local LLM for generation (free, CPU; API optional later) · **FastAPI** (service) · **Docker** (reproducible) · **pytest + GitHub Actions** (keep green) · arXiv metadata dump / API (free, open).
 - **GitHub:** `projects/papertrail/` (may split into own repo later). **Demo:** TODO (API + short screen recording).
 - **Evaluation metrics:** Recall@K, MRR, nDCG@K per retrieval config (BM25, dense, hybrid, hybrid+rerank, ±rewrite); faithfulness of answers to cited passages; p50/p95 latency and cost/query per config.
-- **Results:** TODO.
-- **Resume bullets:** TODO (real numbers only; flag to Priyanka when ready).
+- **Results (2026-10-17, real run; details in `projects/papertrail/README.md`, ADR 0006):** 2,000 cs.CL abstracts, 200 doc2query questions. BM25 MRR 0.716 / R@10 0.825. Dense (bge-small) 0.588 / 0.755. Hybrid RRF 0.703 / 0.875. **Hybrid + cross-encoder rerank@50: 0.838 / 0.925**, at p50 1.93 s/query on 4-vCPU CPU (BM25 0.4 ms, hybrid 15 ms). The title golden set shows the same ordering (rerank MRR 0.959 vs BM25 0.925). Rule-based rewrite: no gain (≤0 MRR change). Not yet done: confidence intervals, hand labels, 10k+ scale, generation and faithfulness results.
+- **Resume bullets (DRAFT, real numbers; flagged to Priyanka 2026-10-17):**
+  - Built a two-stage hybrid retrieval pipeline (from-scratch BM25 + FAISS dense embeddings fused via Reciprocal Rank Fusion, then cross-encoder reranking) over 2,000 arXiv papers. It raised MRR from 0.72 to 0.84 and Recall@10 from 0.83 to 0.93 over a BM25 baseline on 200 held-out questions.
+  - Designed an IR evaluation harness (Recall@K, MRR, nDCG@10, p50/p95 latency) comparing 6 retrieval configurations on two synthetic golden sets. Quantified the reranker's quality/latency tradeoff (~2 s vs <1 ms per query on CPU) and removed a query-rewriting stage that showed no gain.
+  - ⚠️ Resume currently says "10,000+ papers". The measured corpus is **2,000**. Keep "10,000+" only once the scale-up run is done, or change it to 2,000 now.
 - **LinkedIn content:** launch post; "BM25 vs dense vs hybrid — what the numbers said"; "why my reranker helped/hurt"; faithfulness eval pitfalls; lessons.
 - **Interview questions:** Why RRF? Recall@10 high but answers bad — why? How did you build labels? What's LLM-judge bias? Latency budget breakdown? Chunking choice?
 - **Next improvements:** scale subset→10k+; HNSW vs flat tradeoff; semantic cache; judge-vs-human calibration on a small labelled set.

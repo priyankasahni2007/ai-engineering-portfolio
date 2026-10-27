@@ -13,6 +13,9 @@ It is already listed on her resume as "in progress", so it must be built FIRST a
 - Code lives in `projects/papertrail/`.
 - When results exist, write real-number resume bullets in PORTFOLIO_ROADMAP.md and flag them to Priyanka (she will update her resume).
 
+## Mode change (2026-10-27)
+Priyanka now builds every project by hand in her own repos, guided step by step. The daily build routine is **disabled**. PaperTrail guide: `guides/papertrail-build-guide.md` (all code tested before it was handed over). The code in `projects/papertrail/` is an earlier auto-built reference only.
+
 ## Done
 - 2026-10-11 — Phase A(a): market research → `research/market-2026.md`.
 - 2026-10-12 — Phase A(b)+(c): `research/project-ranking.md` (17 ideas ranked) and `PORTFOLIO_ROADMAP.md` (7 flagships, Oct 2026 – Sep 2027, gaps). Phase A is complete.
